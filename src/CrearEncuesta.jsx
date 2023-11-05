@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import "./App.css";
+import "./styles/App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Inicio from "./inicio";
 import CrearEncuesta from "./CrearEncuesta";
 import Encuesta from "./Encuesta";
-import Menu from './Menu'; // Importa el componente Menu
-import NotFound from './NotFound'; // Importa el componente NotFound
-import encuestas from './encuestas.json'
+import Menu from './Menu';
+import NotFound from './NotFound';
+import encuestas from './encuestas.json';
 
 function App() {
   const [listaEncuestas, setListaEncuestas] = useState(encuestas);
@@ -23,7 +23,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <Menu /> {/* Agrega el menú de navegación */}
+      <Menu />
       <Routes>
         <Route path="/" element={<Inicio listaEncuestas={listaEncuestas} />} />
         <Route path="/encuesta/crear" element={<CrearEncuesta agregarEncuesta={agregarEncuesta} />} />
